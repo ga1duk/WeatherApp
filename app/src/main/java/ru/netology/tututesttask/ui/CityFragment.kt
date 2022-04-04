@@ -8,7 +8,6 @@ import androidx.fragment.app.Fragment
 import androidx.navigation.fragment.findNavController
 import ru.netology.tututesttask.R
 import ru.netology.tututesttask.databinding.FragmentCityBinding
-import ru.netology.tututesttask.databinding.FragmentWeatherBinding
 
 class CityFragment : Fragment() {
     override fun onCreateView(
