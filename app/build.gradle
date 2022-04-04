@@ -21,11 +21,11 @@ android {
             minifyEnabled false
             proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
             manifestPlaceholders.usesCleartextTraffic = false
-            buildConfigField "String", "BASE_URL", '"http://192.168.0.11:9999"'
+            buildConfigField "String", "BASE_URL", '"https://api.weather.yandex.ru"'
         }
         debug {
             manifestPlaceholders.usesCleartextTraffic = true
-            buildConfigField "String", "BASE_URL", '"http://192.168.0.11:9999"'
+            buildConfigField "String", "BASE_URL", '"https://api.weather.yandex.ru"'
         }
     }
     compileOptions {
