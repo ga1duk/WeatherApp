@@ -3,27 +3,18 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="wrap_content">
 
     <TextView
         android:id="@+id/tv_city"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:textSize="@dimen/textview_city_size"
-        tools:text="Moscow"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
-
-    <TextView
-        android:id="@+id/tv_temp"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:textSize="@dimen/textview_city_size"
-        app:layout_constraintEnd_toEndOf="parent"
-        tools:text="17"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/tv_city"/>
+        app:layout_constraintTop_toTopOf="parent"
+        android:layout_marginBottom="16dp"
+        tools:text="Москва" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
