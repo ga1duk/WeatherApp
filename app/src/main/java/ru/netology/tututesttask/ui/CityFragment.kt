@@ -9,14 +9,15 @@ import androidx.fragment.app.viewModels
 import androidx.navigation.fragment.findNavController
 import ru.netology.tututesttask.R
 import ru.netology.tututesttask.adapter.CityAdapter
-import ru.netology.tututesttask.adapter.OnClickListener
+import ru.netology.tututesttask.adapter.OnCityClickListener
 import ru.netology.tututesttask.databinding.FragmentCityBinding
+import ru.netology.tututesttask.dto.CityModel
 import ru.netology.tututesttask.util.StringArg
-import ru.netology.tututesttask.viewmodel.CityViewModel
+import ru.netology.tututesttask.viewmodel.WeatherViewModel
 
 class CityFragment : Fragment() {
 
-    private val cityViewModel: CityViewModel by viewModels(ownerProducer = ::requireParentFragment)
+    private val viewModel: WeatherViewModel by viewModels(ownerProducer = ::requireParentFragment)
 
     companion object {
         var Bundle.textArg: String? by StringArg
@@ -30,17 +31,18 @@ class CityFragment : Fragment() {
         val binding = FragmentCityBinding.inflate(inflater, container, false)
 
 
-        val adapter = CityAdapter(object : OnClickListener {
-            override fun onNextScreenOpen(city: String) {
+        val adapter = CityAdapter(object : OnCityClickListener {
+            override fun onNextScreenOpen(cityModel: CityModel) {
                 findNavController().navigate(R.id.action_cityFragment_to_weatherFragment,
                     Bundle().apply {
-                        textArg = city
+                        textArg = cityModel.city
                     })
+
             }
         })
         binding.rvCity.adapter = adapter
 
-        cityViewModel.data.observe(viewLifecycleOwner) { cities ->
+        viewModel.cityData.observe(viewLifecycleOwner) { cities ->
             adapter.submitList(cities)
         }
 

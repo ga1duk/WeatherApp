@@ -8,15 +8,15 @@ import androidx.recyclerview.widget.RecyclerView
 import ru.netology.tututesttask.databinding.CardCityBinding
 import ru.netology.tututesttask.dto.CityModel
 
-interface OnClickListener {
-    fun onNextScreenOpen(city: String) {}
+interface OnCityClickListener {
+    fun onNextScreenOpen(cityModel: CityModel) {}
 }
 
-class CityAdapter(private val onClickListener: OnClickListener) : ListAdapter<CityModel, CityViewHolder>(CityDiffCallback()) {
+class CityAdapter(private val onCityClickListener: OnCityClickListener) : ListAdapter<CityModel, CityViewHolder>(CityDiffCallback()) {
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): CityViewHolder {
         val binding = CardCityBinding.inflate(LayoutInflater.from(parent.context), parent, false)
-        return CityViewHolder(binding, onClickListener)
+        return CityViewHolder(binding, onCityClickListener)
     }
 
     override fun onBindViewHolder(holder: CityViewHolder, position: Int) {
@@ -27,13 +27,13 @@ class CityAdapter(private val onClickListener: OnClickListener) : ListAdapter<Ci
 
 class CityViewHolder(
     private val binding: CardCityBinding,
-    private val onClickListener: OnClickListener
+    private val onCityClickListener: OnCityClickListener
 ) : RecyclerView.ViewHolder(binding.root) {
     fun bind(cityModel: CityModel) {
         binding.tvCity.text = cityModel.city
 
         binding.tvCity.setOnClickListener {
-            onClickListener.onNextScreenOpen(cityModel.city)
+            onCityClickListener.onNextScreenOpen(cityModel)
         }
     }
 }
