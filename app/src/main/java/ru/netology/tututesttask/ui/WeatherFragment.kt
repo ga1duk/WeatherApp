@@ -22,8 +22,8 @@ class WeatherFragment : Fragment() {
 
         arguments?.textArg
             ?.let(binding.tvCity::setText)
-        viewModel.data.observe(viewLifecycleOwner) { forecast ->
-            binding.tvTemp.text = forecast.fact.temp.toString()
+        viewModel.data.observe(viewLifecycleOwner) { ForecastModel ->
+            binding.tvTemp.text = ForecastModel.fact.temp.toString()
         }
 
         return binding.root

@@ -4,13 +4,13 @@ import ru.netology.nmedia.error.ApiError
 import ru.netology.nmedia.error.NetworkError
 import ru.netology.nmedia.error.UnknownError
 import ru.netology.tututesttask.api.WeatherApi
-import ru.netology.tututesttask.dto.Forecast
+import ru.netology.tututesttask.dto.ForecastModel
 import java.io.IOException
 
 class WeatherRepositoryImpl : WeatherRepository {
-    override suspend fun getWeather(): Forecast {
+    override suspend fun getWeather(): ForecastModel {
         try {
-            val response = WeatherApi.retrofitService.getWeather(55.566031, 37.496647)
+            val response = WeatherApi.retrofitService.getWeather(44.4245612, 39.4967446)
             if (!response.isSuccessful) {
                 throw ApiError(response.code(), response.message())
             }

@@ -1,5 +1,5 @@
 package ru.netology.tututesttask.dto
 
-data class Forecast(val fact: Fact)
+data class ForecastModel(val fact: FactModel)
 
-data class Fact(val temp: Int)
+data class FactModel(val temp: Int)

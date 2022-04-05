@@ -9,7 +9,7 @@ import retrofit2.http.GET
 import retrofit2.http.Headers
 import retrofit2.http.Query
 import ru.netology.tututesttask.BuildConfig
-import ru.netology.tututesttask.dto.Forecast
+import ru.netology.tututesttask.dto.ForecastModel
 
 private const val BASE_URL = "${BuildConfig.BASE_URL}/v2/"
 private const val LAT = "lat"
@@ -34,7 +34,7 @@ private val retrofit = Retrofit.Builder()
 interface WeatherApiService {
    @GET("forecast")
    @Headers("X-Yandex-API-Key: 573dbee2-4c5e-47f4-9abb-e465c1d993bd")
-   suspend fun getWeather(@Query(LAT) lat: Double, @Query (LON) lon: Double): Response<Forecast>
+   suspend fun getWeather(@Query(LAT) lat: Double, @Query (LON) lon: Double): Response<ForecastModel>
 }
 
 object WeatherApi {
