@@ -19,7 +19,7 @@ class WeatherViewModel : ViewModel() {
         loadWeather()
     }
 
-private fun loadWeather() = viewModelScope.launch {
+    private fun loadWeather() = viewModelScope.launch {
         _data.value = repository.getWeather()
-}
+    }
 }

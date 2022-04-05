@@ -8,9 +8,10 @@ import ru.netology.tututesttask.dto.ForecastModel
 import java.io.IOException
 
 class WeatherRepositoryImpl : WeatherRepository {
+
     override suspend fun getWeather(): ForecastModel {
         try {
-            val response = WeatherApi.retrofitService.getWeather(44.4245612, 39.4967446)
+            val response = WeatherApi.retrofitService.getWeather(55.580748, 36.8251127)
             if (!response.isSuccessful) {
                 throw ApiError(response.code(), response.message())
             }

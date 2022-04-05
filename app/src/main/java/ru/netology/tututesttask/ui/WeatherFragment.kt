@@ -11,7 +11,7 @@ import ru.netology.tututesttask.ui.CityFragment.Companion.textArg
 import ru.netology.tututesttask.viewmodel.WeatherViewModel
 
 class WeatherFragment : Fragment() {
-    private val viewModel: WeatherViewModel by viewModels(ownerProducer = ::requireParentFragment)
+    private val weatherViewModel: WeatherViewModel by viewModels(ownerProducer = ::requireParentFragment)
 
     override fun onCreateView(
         inflater: LayoutInflater,
@@ -20,10 +20,10 @@ class WeatherFragment : Fragment() {
     ): View {
         val binding = FragmentWeatherBinding.inflate(inflater, container, false)
 
-        arguments?.textArg
-            ?.let(binding.tvCity::setText)
-        viewModel.data.observe(viewLifecycleOwner) { ForecastModel ->
-            binding.tvTemp.text = ForecastModel.fact.temp.toString()
+        arguments?.textArg?.let(binding.tvCity::setText)
+
+        weatherViewModel.data.observe(viewLifecycleOwner) { forecastModel ->
+            binding.tvTemp.text = forecastModel.fact.temp.toString()
         }
 
         return binding.root

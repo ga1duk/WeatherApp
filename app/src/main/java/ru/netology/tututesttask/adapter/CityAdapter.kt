@@ -40,7 +40,7 @@ class CityViewHolder(
 
 class CityDiffCallback : DiffUtil.ItemCallback<CityModel>() {
     override fun areItemsTheSame(oldItem: CityModel, newItem: CityModel): Boolean {
-        return oldItem.city == newItem.city
+        return oldItem.id == newItem.id
     }
 
     override fun areContentsTheSame(oldItem: CityModel, newItem: CityModel): Boolean {
