@@ -6,6 +6,7 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.viewModels
+import ru.netology.tututesttask.R
 import ru.netology.tututesttask.databinding.FragmentWeatherBinding
 import ru.netology.tututesttask.ui.CityFragment.Companion.textArg
 import ru.netology.tututesttask.viewmodel.WeatherViewModel
@@ -20,11 +21,10 @@ class WeatherFragment : Fragment() {
     ): View {
         val binding = FragmentWeatherBinding.inflate(inflater, container, false)
 
-//        arguments?.textArg?.let(binding.tvCity::setText)
         binding.tvCity.text = arguments?.textArg
 
         viewModel.weatherData.observe(viewLifecycleOwner) { forecastModel ->
-            binding.tvTemp.text = forecastModel.fact.temp.toString()
+            binding.tvTemp.text = "${forecastModel.fact.temp} ${resources.getString(R.string.degrees_by_celsius_text)}"
         }
 
         return binding.root
