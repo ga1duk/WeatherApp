@@ -6,5 +6,5 @@ import ru.netology.tututesttask.dto.ForecastModel
 interface WeatherRepository {
     fun loadCities(): List<CityModel>
 
-    suspend fun getWeather(): ForecastModel
+    suspend fun getWeather(lat: Double, lon: Double): ForecastModel
 }

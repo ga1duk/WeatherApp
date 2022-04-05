@@ -31,9 +31,9 @@ class WeatherRepositoryImpl : WeatherRepository {
         return cities
     }
 
-    override suspend fun getWeather(): ForecastModel {
+    override suspend fun getWeather(lat: Double, lon: Double): ForecastModel {
         try {
-            val response = WeatherApi.retrofitService.getWeather(55.580748, 36.8251127)
+            val response = WeatherApi.retrofitService.getWeather(lat, lon)
             if (!response.isSuccessful) {
                 throw ApiError(response.code(), response.message())
             }

@@ -30,19 +30,19 @@ class CityFragment : Fragment() {
     ): View {
         val binding = FragmentCityBinding.inflate(inflater, container, false)
 
-
         val adapter = CityAdapter(object : OnCityClickListener {
             override fun onNextScreenOpen(cityModel: CityModel) {
                 findNavController().navigate(R.id.action_cityFragment_to_weatherFragment,
                     Bundle().apply {
                         textArg = cityModel.city
+                        viewModel.loadWeather(cityModel.lat, cityModel.lon)
                     })
 
             }
         })
         binding.rvCity.adapter = adapter
 
-        viewModel.cityData.observe(viewLifecycleOwner) { cities ->
+        viewModel.data.observe(viewLifecycleOwner) { cities ->
             adapter.submitList(cities)
         }
 

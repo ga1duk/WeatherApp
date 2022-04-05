@@ -29,8 +29,4 @@ class WeatherFragment : Fragment() {
 
         return binding.root
     }
-
-    fun printTemperature(lat: Double, lon: Double) {
-
-    }
 }

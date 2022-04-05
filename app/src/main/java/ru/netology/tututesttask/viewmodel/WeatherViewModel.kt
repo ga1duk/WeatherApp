@@ -11,10 +11,11 @@ import ru.netology.tututesttask.repository.WeatherRepository
 import ru.netology.tututesttask.repository.WeatherRepositoryImpl
 
 class WeatherViewModel : ViewModel() {
+
     private val repository: WeatherRepository = WeatherRepositoryImpl()
-    private val _cityData = MutableLiveData<List<CityModel>>()
-    val cityData: LiveData<List<CityModel>>
-        get() = _cityData
+    private val _data = MutableLiveData<List<CityModel>>()
+    val data: LiveData<List<CityModel>>
+        get() = _data
 
     private val _weatherData = MutableLiveData<ForecastModel>()
     val weatherData: LiveData<ForecastModel>
@@ -22,14 +23,13 @@ class WeatherViewModel : ViewModel() {
 
     init {
         loadCities()
-        loadWeather()
     }
 
-    private fun loadCities() {
-        _cityData.value = repository.loadCities()
+    fun loadCities() {
+        _data.value = repository.loadCities()
     }
 
-    private fun loadWeather() = viewModelScope.launch {
-        _weatherData.value = repository.getWeather()
+    fun loadWeather(lat: Double, lon: Double) = viewModelScope.launch {
+        _weatherData.value = repository.getWeather(lat, lon)
     }
 }
