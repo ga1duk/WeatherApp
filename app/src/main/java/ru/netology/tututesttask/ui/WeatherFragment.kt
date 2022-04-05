@@ -21,9 +21,8 @@ class WeatherFragment : Fragment() {
     ): View {
         val binding = FragmentWeatherBinding.inflate(inflater, container, false)
 
-        binding.tvCity.text = arguments?.textArg
-
         viewModel.weatherData.observe(viewLifecycleOwner) { forecastModel ->
+            binding.tvCity.text = forecastModel.geo_object?.locality?.name ?: arguments?.textArg
             binding.tvTemp.text = "${forecastModel.fact.temp} ${resources.getString(R.string.degrees_by_celsius_text)}"
         }
 
