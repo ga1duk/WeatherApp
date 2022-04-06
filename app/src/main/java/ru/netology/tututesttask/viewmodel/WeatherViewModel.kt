@@ -28,7 +28,7 @@ class WeatherViewModel : ViewModel() {
         loadCities()
     }
 
-    fun loadCities() {
+    private fun loadCities() {
         _cityData.value = repository.loadCities()
     }
 

@@ -13,6 +13,7 @@ import com.bumptech.glide.Glide
 import com.bumptech.glide.RequestBuilder
 import ru.netology.tututesttask.R
 import ru.netology.tututesttask.databinding.FragmentWeatherBinding
+import ru.netology.tututesttask.glide.GlideApp
 import ru.netology.tututesttask.ui.CityFragment.Companion.doubleArgLat
 import ru.netology.tututesttask.ui.CityFragment.Companion.doubleArgLon
 import ru.netology.tututesttask.ui.CityFragment.Companion.textArg
@@ -29,7 +30,7 @@ class WeatherFragment : Fragment() {
     ): View {
         val binding = FragmentWeatherBinding.inflate(inflater, container, false)
 
-        requestBuilder = Glide.with(this)
+        requestBuilder = GlideApp.with(this)
             .`as`(PictureDrawable::class.java)
 
         viewModel.weatherDataState.observe(viewLifecycleOwner) { state ->
@@ -42,6 +43,10 @@ class WeatherFragment : Fragment() {
         viewModel.weatherData.observe(viewLifecycleOwner) { weatherModel ->
             binding.tvCity.text = weatherModel.geo_object?.locality?.name ?: arguments?.textArg
             requestBuilder?.load(weatherModel.fact?.getConditionIcon())?.into(binding.icCondition)
+            GlideApp.with(this)
+                .load(weatherModel.fact?.getConditionIcon())
+                .into(binding.icCondition)
+
             binding.tvTemp.text =
                 "${weatherModel.fact?.temp} ${resources.getString(R.string.degrees_by_celsius_text)}"
             binding.tvCondition.text = weatherModel.fact?.condition
