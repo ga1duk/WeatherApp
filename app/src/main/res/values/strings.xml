@@ -1,4 +1,5 @@
 <resources>
     <string name="app_name">TutuTestTask</string>
     <string name="degrees_by_celsius_text">"\u2103"</string>
+    <string name="forecast_for_today_text">Прогноз на сегодня:</string>
 </resources>

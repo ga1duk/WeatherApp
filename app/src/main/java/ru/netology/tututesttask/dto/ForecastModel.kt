@@ -1,6 +1,6 @@
 package ru.netology.tututesttask.dto
 
-data class ForecastModel(val fact: FactModel, val geo_object: GeoObject?)
+data class ForecastModel(val fact: FactModel, val geo_object: GeoObjectModel?)
 
 data class FactModel(
     val temp: Int,
@@ -12,6 +12,6 @@ data class FactModel(
     }
 }
 
-data class GeoObject(val locality: Locality)
+data class GeoObjectModel(val locality: LocalityModel)
 
-data class Locality(val name: String)
+data class LocalityModel(val name: String)
