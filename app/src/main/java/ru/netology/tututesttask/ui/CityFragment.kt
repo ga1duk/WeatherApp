@@ -12,6 +12,7 @@ import ru.netology.tututesttask.adapter.CityAdapter
 import ru.netology.tututesttask.adapter.OnCityClickListener
 import ru.netology.tututesttask.databinding.FragmentCityBinding
 import ru.netology.tututesttask.dto.CityModel
+import ru.netology.tututesttask.util.DoubleArg
 import ru.netology.tututesttask.util.StringArg
 import ru.netology.tututesttask.viewmodel.WeatherViewModel
 
@@ -21,6 +22,8 @@ class CityFragment : Fragment() {
 
     companion object {
         var Bundle.textArg: String? by StringArg
+        var Bundle.doubleArgLat: Double? by DoubleArg
+        var Bundle.doubleArgLon: Double? by DoubleArg
     }
 
     override fun onCreateView(
@@ -35,6 +38,8 @@ class CityFragment : Fragment() {
                 findNavController().navigate(R.id.action_cityFragment_to_weatherFragment,
                     Bundle().apply {
                         textArg = cityModel.city
+                        doubleArgLat = cityModel.lat
+                        doubleArgLon = cityModel.lon
                         viewModel.loadWeather(cityModel.lat, cityModel.lon)
                     })
 
@@ -42,7 +47,7 @@ class CityFragment : Fragment() {
         })
         binding.rvCity.adapter = adapter
 
-        viewModel.data.observe(viewLifecycleOwner) { cities ->
+        viewModel.cityData.observe(viewLifecycleOwner) { cities ->
             adapter.submitList(cities)
         }
 

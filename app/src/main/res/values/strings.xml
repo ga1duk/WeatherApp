@@ -2,4 +2,6 @@
     <string name="app_name">TutuTestTask</string>
     <string name="degrees_by_celsius_text">"\u2103"</string>
     <string name="forecast_for_today_text">Forecast for today:</string>
+    <string name="error_loading_text">Something went wrong. Try again later</string>
+    <string name="retry_loading_text">Retry</string>
 </resources>

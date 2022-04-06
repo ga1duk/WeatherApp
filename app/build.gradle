@@ -50,6 +50,7 @@ dependencies {
     def lifecycle_version = "2.3.1"
     def glide_version = "4.13.1"
     def androidsvg_version = "1.4"
+    def swiperefreshlayout_version = "1.1.0"
 
     implementation 'androidx.core:core-ktx:1.7.0'
     implementation 'androidx.appcompat:appcompat:1.4.1'
@@ -77,4 +78,6 @@ dependencies {
     annotationProcessor "com.github.bumptech.glide:compiler:$glide_version"
 
     implementation "com.caverock:androidsvg-aar:$androidsvg_version"
+
+    implementation "androidx.swiperefreshlayout:swiperefreshlayout:$swiperefreshlayout_version"
 }
