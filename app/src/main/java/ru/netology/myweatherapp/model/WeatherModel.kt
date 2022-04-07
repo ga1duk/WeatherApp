@@ -1,4 +1,4 @@
-package ru.netology.tututesttask.model
+package ru.netology.myweatherapp.model
 
 data class WeatherModelState(
     val loading: Boolean = false,

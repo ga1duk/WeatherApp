@@ -1,4 +1,4 @@
-package ru.netology.tututesttask.ui
+package ru.netology.myweatherapp.ui
 
 import android.graphics.drawable.PictureDrawable
 import android.os.Bundle
@@ -9,15 +9,14 @@ import androidx.core.view.isVisible
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.viewModels
 import androidx.swiperefreshlayout.widget.CircularProgressDrawable
-import com.bumptech.glide.Glide
 import com.bumptech.glide.RequestBuilder
-import ru.netology.tututesttask.R
-import ru.netology.tututesttask.databinding.FragmentWeatherBinding
-import ru.netology.tututesttask.glide.GlideApp
-import ru.netology.tututesttask.ui.CityFragment.Companion.doubleArgLat
-import ru.netology.tututesttask.ui.CityFragment.Companion.doubleArgLon
-import ru.netology.tututesttask.ui.CityFragment.Companion.textArg
-import ru.netology.tututesttask.viewmodel.WeatherViewModel
+import ru.netology.myweatherapp.R
+import ru.netology.myweatherapp.databinding.FragmentWeatherBinding
+import ru.netology.myweatherapp.glide.GlideApp
+import ru.netology.myweatherapp.ui.CityFragment.Companion.doubleArgLat
+import ru.netology.myweatherapp.ui.CityFragment.Companion.doubleArgLon
+import ru.netology.myweatherapp.ui.CityFragment.Companion.textArg
+import ru.netology.myweatherapp.viewmodel.WeatherViewModel
 
 class WeatherFragment : Fragment() {
     private var requestBuilder: RequestBuilder<PictureDrawable>? = null

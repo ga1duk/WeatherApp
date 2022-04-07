@@ -1,4 +1,4 @@
-package ru.netology.tututesttask.api
+package ru.netology.myweatherapp.api
 
 import okhttp3.OkHttpClient
 import okhttp3.logging.HttpLoggingInterceptor
@@ -8,8 +8,8 @@ import retrofit2.converter.gson.GsonConverterFactory
 import retrofit2.http.GET
 import retrofit2.http.Headers
 import retrofit2.http.Query
-import ru.netology.tututesttask.BuildConfig
-import ru.netology.tututesttask.dto.ForecastModel
+import ru.netology.myweatherapp.BuildConfig
+import ru.netology.myweatherapp.dto.ForecastModel
 
 private const val BASE_URL = "${BuildConfig.BASE_URL}/v2/"
 private const val LAT = "lat"

@@ -1,4 +1,4 @@
-package ru.netology.tututesttask
+package ru.netology.myweatherapp
 
 import androidx.test.platform.app.InstrumentationRegistry
 import androidx.test.ext.junit.runners.AndroidJUnit4

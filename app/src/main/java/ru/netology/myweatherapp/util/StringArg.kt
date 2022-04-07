@@ -1,4 +1,4 @@
-package ru.netology.tututesttask.util
+package ru.netology.myweatherapp.util
 
 import android.os.Bundle
 import kotlin.properties.ReadWriteProperty

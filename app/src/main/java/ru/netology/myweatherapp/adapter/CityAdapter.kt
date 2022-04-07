@@ -1,12 +1,12 @@
-package ru.netology.tututesttask.adapter
+package ru.netology.myweatherapp.adapter
 
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.DiffUtil
 import androidx.recyclerview.widget.ListAdapter
 import androidx.recyclerview.widget.RecyclerView
-import ru.netology.tututesttask.databinding.CardCityBinding
-import ru.netology.tututesttask.dto.CityModel
+import ru.netology.myweatherapp.databinding.CardCityBinding
+import ru.netology.myweatherapp.dto.CityModel
 
 interface OnCityClickListener {
     fun onNextScreenOpen(cityModel: CityModel) {}

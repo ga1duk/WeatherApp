@@ -1,7 +1,7 @@
-package ru.netology.tututesttask.repository
+package ru.netology.myweatherapp.repository
 
-import ru.netology.tututesttask.dto.CityModel
-import ru.netology.tututesttask.dto.ForecastModel
+import ru.netology.myweatherapp.dto.CityModel
+import ru.netology.myweatherapp.dto.ForecastModel
 
 interface WeatherRepository {
     fun loadCities(): List<CityModel>

@@ -1,4 +1,4 @@
-package ru.netology.tututesttask
+package ru.netology.myweatherapp
 
 import org.junit.Test
 

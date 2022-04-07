@@ -1,15 +1,15 @@
-package ru.netology.tututesttask.viewmodel
+package ru.netology.myweatherapp.viewmodel
 
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import kotlinx.coroutines.launch
-import ru.netology.tututesttask.dto.CityModel
-import ru.netology.tututesttask.dto.ForecastModel
-import ru.netology.tututesttask.model.WeatherModelState
-import ru.netology.tututesttask.repository.WeatherRepository
-import ru.netology.tututesttask.repository.WeatherRepositoryImpl
+import ru.netology.myweatherapp.dto.CityModel
+import ru.netology.myweatherapp.dto.ForecastModel
+import ru.netology.myweatherapp.model.WeatherModelState
+import ru.netology.myweatherapp.repository.WeatherRepository
+import ru.netology.myweatherapp.repository.WeatherRepositoryImpl
 
 class WeatherViewModel : ViewModel() {
 

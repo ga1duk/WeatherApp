@@ -1,4 +1,4 @@
-package ru.netology.tututesttask.glide
+package ru.netology.myweatherapp.glide
 
 import com.bumptech.glide.load.Options
 import com.bumptech.glide.load.ResourceDecoder

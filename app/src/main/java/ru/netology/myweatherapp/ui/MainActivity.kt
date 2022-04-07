@@ -1,8 +1,8 @@
-package ru.netology.tututesttask.ui
+package ru.netology.myweatherapp.ui
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import ru.netology.tututesttask.R
+import ru.netology.myweatherapp.R
 
 class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {

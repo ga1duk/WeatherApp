@@ -1,11 +1,11 @@
-package ru.netology.tututesttask.repository
+package ru.netology.myweatherapp.repository
 
 import ru.netology.nmedia.error.ApiError
 import ru.netology.nmedia.error.NetworkError
 import ru.netology.nmedia.error.UnknownError
-import ru.netology.tututesttask.api.WeatherApi
-import ru.netology.tututesttask.dto.CityModel
-import ru.netology.tututesttask.dto.ForecastModel
+import ru.netology.myweatherapp.api.WeatherApi
+import ru.netology.myweatherapp.dto.CityModel
+import ru.netology.myweatherapp.dto.ForecastModel
 import java.io.IOException
 
 class WeatherRepositoryImpl : WeatherRepository {

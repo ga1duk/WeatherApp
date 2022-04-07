@@ -1,4 +1,4 @@
-package ru.netology.tututesttask.dto
+package ru.netology.myweatherapp.dto
 
 data class ForecastModel(
     val fact: FactModel?,

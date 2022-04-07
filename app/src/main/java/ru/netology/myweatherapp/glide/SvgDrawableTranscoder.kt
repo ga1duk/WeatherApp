@@ -1,4 +1,4 @@
-package ru.netology.tututesttask.glide
+package ru.netology.myweatherapp.glide
 
 import android.graphics.Picture
 import android.graphics.drawable.PictureDrawable

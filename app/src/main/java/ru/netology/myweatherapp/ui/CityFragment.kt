@@ -1,4 +1,4 @@
-package ru.netology.tututesttask.ui
+package ru.netology.myweatherapp.ui
 
 import android.os.Bundle
 import android.view.LayoutInflater
@@ -7,14 +7,14 @@ import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.viewModels
 import androidx.navigation.fragment.findNavController
-import ru.netology.tututesttask.R
-import ru.netology.tututesttask.adapter.CityAdapter
-import ru.netology.tututesttask.adapter.OnCityClickListener
-import ru.netology.tututesttask.databinding.FragmentCityBinding
-import ru.netology.tututesttask.dto.CityModel
-import ru.netology.tututesttask.util.DoubleArg
-import ru.netology.tututesttask.util.StringArg
-import ru.netology.tututesttask.viewmodel.WeatherViewModel
+import ru.netology.myweatherapp.R
+import ru.netology.myweatherapp.adapter.CityAdapter
+import ru.netology.myweatherapp.adapter.OnCityClickListener
+import ru.netology.myweatherapp.databinding.FragmentCityBinding
+import ru.netology.myweatherapp.dto.CityModel
+import ru.netology.myweatherapp.util.DoubleArg
+import ru.netology.myweatherapp.util.StringArg
+import ru.netology.myweatherapp.viewmodel.WeatherViewModel
 
 class CityFragment : Fragment() {
 
