@@ -15,6 +15,6 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         android:layout_marginBottom="16dp"
-        tools:text="Москва" />
+        tools:text="Москва"/>
 
 </androidx.constraintlayout.widget.ConstraintLayout>

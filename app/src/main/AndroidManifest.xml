@@ -10,7 +10,7 @@
         android:label="@string/app_name"
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
-        android:theme="@style/Theme.TutuTestTask"
+        android:theme="@style/Theme.MyWeatherApp"
         android:usesCleartextTraffic="${usesCleartextTraffic}">
         <activity
             android:name="ru.netology.myweatherapp.ui.MainActivity"
