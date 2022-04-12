@@ -5,8 +5,9 @@ import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import kotlinx.coroutines.launch
+import ru.netology.myweatherapp.WeatherMapper
 import ru.netology.myweatherapp.dto.CityModel
-import ru.netology.myweatherapp.dto.ForecastModel
+import ru.netology.myweatherapp.model.ForecastModel
 import ru.netology.myweatherapp.model.WeatherModelState
 import ru.netology.myweatherapp.repository.WeatherRepository
 import ru.netology.myweatherapp.repository.WeatherRepositoryImpl
@@ -14,6 +15,7 @@ import ru.netology.myweatherapp.repository.WeatherRepositoryImpl
 class WeatherViewModel : ViewModel() {
 
     private val repository: WeatherRepository = WeatherRepositoryImpl()
+    private val mapper: WeatherMapper = WeatherMapper()
     private val _cityData = MutableLiveData<List<CityModel>>()
     val cityData: LiveData<List<CityModel>>
         get() = _cityData
@@ -35,7 +37,7 @@ class WeatherViewModel : ViewModel() {
     fun loadWeather(lat: Double, lon: Double) = viewModelScope.launch {
         try {
             _weatherDataState.value = WeatherModelState(loading = true)
-            _weatherData.value = repository.getWeather(lat, lon)
+            _weatherData.value = mapper.mapForecast(repository.getWeather(lat, lon))
             _weatherDataState.value = WeatherModelState(forecast = true)
         } catch (e: Exception) {
             _weatherDataState.value = WeatherModelState(error = true)
@@ -45,7 +47,7 @@ class WeatherViewModel : ViewModel() {
     fun refreshWeather(lat: Double, lon: Double) = viewModelScope.launch {
         try {
             _weatherDataState.value = WeatherModelState(refreshing = true)
-            _weatherData.value = repository.getWeather(lat, lon)
+            _weatherData.value = mapper.mapForecast(repository.getWeather(lat, lon))
             _weatherDataState.value = WeatherModelState(forecast = true)
         } catch (e: Exception) {
             _weatherDataState.value = WeatherModelState(error = true)

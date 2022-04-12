@@ -4,7 +4,7 @@
     <string name="forecast_for_today_text">Forecast for today:</string>
     <string name="error_loading_text">Something went wrong. Try again later</string>
     <string name="retry_loading_text">Retry</string>
-    <string name="current_temperature_text" translatable="false">%1$d %2$s</string>
+    <string name="current_temperature_text" translatable="false">%1$s %2$s</string>
 
     <string name="clear_conditions_text">clear</string>
     <string name="partly_cloudy_conditions_text">partly cloudy</string>
