@@ -3,6 +3,7 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
+        <entry key="..\:/Users/Dmitry/Netology/MyWeatherApp/app/src/main/res/layout/activity_main.xml" value="0.20416666666666666" />
         <entry key="..\:/Users/Dmitry/Netology/MyWeatherApp/app/src/main/res/layout/card_city.xml" value="0.20416666666666666" />
         <entry key="..\:/Users/Dmitry/Netology/MyWeatherApp/app/src/main/res/layout/fragment_city.xml" value="0.1" />
         <entry key="..\:/Users/Dmitry/Netology/MyWeatherApp/app/src/main/res/layout/fragment_weather.xml" value="0.1" />

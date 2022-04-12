@@ -12,7 +12,8 @@ interface OnCityClickListener {
     fun onNextScreenOpen(cityModel: CityModel) {}
 }
 
-class CityAdapter(private val onCityClickListener: OnCityClickListener) : ListAdapter<CityModel, CityViewHolder>(CityDiffCallback()) {
+class CityAdapter(private val onCityClickListener: OnCityClickListener) :
+    ListAdapter<CityModel, CityViewHolder>(CityDiffCallback()) {
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): CityViewHolder {
         val binding = CardCityBinding.inflate(LayoutInflater.from(parent.context), parent, false)

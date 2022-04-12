@@ -95,6 +95,7 @@
             android:id="@+id/tv_condition"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:gravity="center"
             android:textSize="@dimen/textview_common_size"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"

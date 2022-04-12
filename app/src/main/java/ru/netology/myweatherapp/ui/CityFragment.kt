@@ -12,6 +12,7 @@ import ru.netology.myweatherapp.adapter.CityAdapter
 import ru.netology.myweatherapp.adapter.OnCityClickListener
 import ru.netology.myweatherapp.databinding.FragmentCityBinding
 import ru.netology.myweatherapp.dto.CityModel
+import ru.netology.myweatherapp.dto.ForecastModel
 import ru.netology.myweatherapp.util.DoubleArg
 import ru.netology.myweatherapp.util.StringArg
 import ru.netology.myweatherapp.viewmodel.WeatherViewModel

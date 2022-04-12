@@ -46,9 +46,12 @@ class WeatherFragment : Fragment() {
                 .load(weatherModel.fact?.getConditionIcon())
                 .into(binding.icCondition)
 
-            binding.tvTemp.text =
-                "${weatherModel.fact?.temp} ${resources.getString(R.string.degrees_by_celsius_text)}"
-            binding.tvCondition.text = weatherModel.fact?.condition
+            binding.tvTemp.text = resources.getString(
+                R.string.current_temperature_text,
+                weatherModel.fact?.temp,
+                resources.getString(R.string.degrees_by_celsius_text)
+            )
+            binding.tvCondition.text = weatherModel.fact?.getConditionLocalized().toString()
         }
 
         binding.btnRetry.setOnClickListener {
