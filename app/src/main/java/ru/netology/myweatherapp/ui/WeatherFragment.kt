@@ -12,6 +12,7 @@ import androidx.swiperefreshlayout.widget.CircularProgressDrawable
 import com.bumptech.glide.RequestBuilder
 import ru.netology.myweatherapp.R
 import ru.netology.myweatherapp.databinding.FragmentWeatherBinding
+import ru.netology.myweatherapp.dto.*
 import ru.netology.myweatherapp.glide.GlideApp
 import ru.netology.myweatherapp.ui.CityFragment.Companion.doubleArgLat
 import ru.netology.myweatherapp.ui.CityFragment.Companion.doubleArgLon
@@ -51,7 +52,7 @@ class WeatherFragment : Fragment() {
                 weatherModel.fact?.temp,
                 resources.getString(R.string.degrees_by_celsius_text)
             )
-            binding.tvCondition.text = weatherModel.fact?.getConditionLocalized().toString()
+            binding.tvCondition.text = getConditionLocalized(weatherModel)/*.toString()*/
         }
 
         binding.btnRetry.setOnClickListener {
@@ -70,5 +71,30 @@ class WeatherFragment : Fragment() {
         }
 
         return binding.root
+    }
+
+    fun getConditionLocalized(weatherModel: ForecastModel): String {
+        return when (weatherModel.fact?.condition) {
+            CLEAR -> resources.getString(R.string.clear_conditions_text)
+            PARTLY_CLOUDY -> resources.getString(R.string.partly_cloudy_conditions_text)
+            CLOUDY -> resources.getString(R.string.cloudy_conditions_text)
+            OVERCAST -> resources.getString(R.string.overcast_conditions_text)
+            DRIZZLE -> resources.getString(R.string.drizzle_conditions_text)
+            LIGHT_RAIN -> resources.getString(R.string.light_rain_conditions_text)
+            RAIN -> resources.getString(R.string.rain_conditions_text)
+            MODERATE_RAIN -> resources.getString(R.string.moderate_rain_conditions_text)
+            HEAVY_RAIN -> resources.getString(R.string.heavy_rain_conditions_text)
+            CONTINUOUS_HEAVY_RAIN -> resources.getString(R.string.continuous_heavy_rain_conditions_text)
+            SHOWERS -> resources.getString(R.string.showers_conditions_text)
+            WET_SNOW -> resources.getString(R.string.wet_snow_conditions_text)
+            LIGHT_SNOW -> resources.getString(R.string.light_snow_conditions_text)
+            SNOW -> resources.getString(R.string.snow_conditions_text)
+            SNOW_SHOWERS -> resources.getString(R.string.snow_showers_conditions_text)
+            HAIL -> resources.getString(R.string.hail_conditions_text)
+            THUNDERSTORM -> resources.getString(R.string.thunderstorm_conditions_text)
+            THUNDERSTORM_WITH_RAIN -> resources.getString(R.string.thunderstorm_with_rain_conditions_text)
+            THUNDERSTORM_WITH_HAIL -> resources.getString(R.string.thunderstorm_with_hail_conditions_text)
+            else -> weatherModel.fact!!.condition
+        }
     }
 }
