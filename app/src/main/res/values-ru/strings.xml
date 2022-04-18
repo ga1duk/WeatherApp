@@ -41,4 +41,5 @@
     <string name="city_murmansk_text">Мурманск</string>
     <string name="city_adler_text">Адлер</string>
     <string name="city_krasnodar_text">Краснодар</string>
+    <string name="city_indefinite_text">Город неизвестен</string>
 </resources>

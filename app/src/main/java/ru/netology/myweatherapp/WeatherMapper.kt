@@ -32,6 +32,7 @@ const val TAMBOV = "Тамбов"
 const val SARATOV = "Саратов"
 const val PENZA = "Пенза"
 const val ASTRAHAN = "Астрахань"
+const val KALININGRAD = "Калининград"
 const val OREL = "Орёл"
 const val KURSK = "Курск"
 const val ARHANGELSK = "Архангельск"
@@ -53,15 +54,17 @@ class WeatherMapper {
                 SARATOV -> R.string.city_saratov_text
                 PENZA -> R.string.city_penza_text
                 ASTRAHAN -> R.string.city_astrahan_text
+                KALININGRAD -> R.string.city_kaliningrad_text
                 OREL -> R.string.city_orel_text
                 KURSK -> R.string.city_kursk_text
                 ARHANGELSK -> R.string.city_arhangelsk_text
                 MURMANSK -> R.string.city_murmansk_text
                 ADLER -> R.string.city_adler_text
                 KRASNODAR -> R.string.city_krasnodar_text
-                else -> 0
+                else -> R.string.city_indefinite_text
             }
-        } ?: 0
+        } ?: R.string.city_indefinite_text
+
         val temp = input.fact?.temp.toString()
         val icon = input.fact?.icon?.let {
             "https://yastatic.net/weather/i/icons/funky/dark/$it.svg"
@@ -87,9 +90,9 @@ class WeatherMapper {
                 THUNDERSTORM -> R.string.thunderstorm_conditions_text
                 THUNDERSTORM_WITH_RAIN -> R.string.thunderstorm_with_rain_conditions_text
                 THUNDERSTORM_WITH_HAIL -> R.string.thunderstorm_with_hail_conditions_text
-                else -> 0
+                else -> R.string.unknown_conditions_text
             }
-        } ?: 0
+        } ?: R.string.unknown_conditions_text
         return ForecastModelLocal(city, temp, icon, condition)
     }
 }

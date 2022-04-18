@@ -25,6 +25,7 @@
     <string name="thunderstorm_conditions_text">thunderstorm</string>
     <string name="thunderstorm_with_rain_conditions_text">thunderstorm with rain</string>
     <string name="thunderstorm_with_hail_conditions_text">thunderstorm with hail</string>
+    <string name="unknown_conditions_text" translatable="false">""</string>
 
     <string name="city_moscow_text">Moscow</string>
     <string name="city_belgorod_text">Belgorod</string>
@@ -42,4 +43,5 @@
     <string name="city_murmansk_text">Murmansk</string>
     <string name="city_adler_text">Adler</string>
     <string name="city_krasnodar_text">Krasnodar</string>
+    <string name="city_indefinite_text">City unknown</string>
 </resources>
