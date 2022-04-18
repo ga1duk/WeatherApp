@@ -24,4 +24,21 @@
     <string name="thunderstorm_conditions_text">гроза</string>
     <string name="thunderstorm_with_rain_conditions_text">дождь с грозой</string>
     <string name="thunderstorm_with_hail_conditions_text">гроза с градом</string>
+
+    <string name="city_moscow_text">Москва</string>
+    <string name="city_belgorod_text">Белгород</string>
+    <string name="city_ufa_text">Уфа</string>
+    <string name="city_lipetsk_text">Липецк</string>
+    <string name="city_voronezh_text">Воронеж</string>
+    <string name="city_tambov_text">Тамбов</string>
+    <string name="city_saratov_text">Саратов</string>
+    <string name="city_penza_text">Пенза</string>
+    <string name="city_astrahan_text">Астрахань</string>
+    <string name="city_orel_text">Орёл</string>
+    <string name="city_kursk_text">Курск</string>
+    <string name="city_kaliningrad_text">Калининград</string>
+    <string name="city_arhangelsk_text">Архангельск</string>
+    <string name="city_murmansk_text">Мурманск</string>
+    <string name="city_adler_text">Адлер</string>
+    <string name="city_krasnodar_text">Краснодар</string>
 </resources>

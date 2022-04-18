@@ -12,9 +12,7 @@ import ru.netology.myweatherapp.adapter.CityAdapter
 import ru.netology.myweatherapp.adapter.OnCityClickListener
 import ru.netology.myweatherapp.databinding.FragmentCityBinding
 import ru.netology.myweatherapp.dto.CityModel
-import ru.netology.myweatherapp.dto.ForecastModel
 import ru.netology.myweatherapp.util.DoubleArg
-import ru.netology.myweatherapp.util.StringArg
 import ru.netology.myweatherapp.viewmodel.WeatherViewModel
 
 class CityFragment : Fragment() {
@@ -22,7 +20,6 @@ class CityFragment : Fragment() {
     private val viewModel: WeatherViewModel by viewModels(ownerProducer = ::requireParentFragment)
 
     companion object {
-        var Bundle.textArg: String? by StringArg
         var Bundle.doubleArgLat: Double? by DoubleArg
         var Bundle.doubleArgLon: Double? by DoubleArg
     }
@@ -38,7 +35,6 @@ class CityFragment : Fragment() {
             override fun onNextScreenOpen(cityModel: CityModel) {
                 findNavController().navigate(R.id.action_cityFragment_to_weatherFragment,
                     Bundle().apply {
-                        textArg = cityModel.city
                         doubleArgLat = cityModel.lat
                         doubleArgLon = cityModel.lon
                         viewModel.loadWeather(cityModel.lat, cityModel.lon)

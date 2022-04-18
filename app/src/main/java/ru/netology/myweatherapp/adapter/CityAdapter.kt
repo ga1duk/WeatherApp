@@ -31,7 +31,7 @@ class CityViewHolder(
     private val onCityClickListener: OnCityClickListener
 ) : RecyclerView.ViewHolder(binding.root) {
     fun bind(cityModel: CityModel) {
-        binding.tvCity.text = cityModel.city
+        binding.tvCity.setText(cityModel.city)
 
         binding.tvCity.setOnClickListener {
             onCityClickListener.onNextScreenOpen(cityModel)

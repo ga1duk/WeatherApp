@@ -25,4 +25,21 @@
     <string name="thunderstorm_conditions_text">thunderstorm</string>
     <string name="thunderstorm_with_rain_conditions_text">thunderstorm with rain</string>
     <string name="thunderstorm_with_hail_conditions_text">thunderstorm with hail</string>
+
+    <string name="city_moscow_text">Moscow</string>
+    <string name="city_belgorod_text">Belgorod</string>
+    <string name="city_ufa_text">Ufa</string>
+    <string name="city_lipetsk_text">Lipetsk</string>
+    <string name="city_voronezh_text">Voronezh</string>
+    <string name="city_tambov_text">Tambov</string>
+    <string name="city_saratov_text">Saratov</string>
+    <string name="city_penza_text">Penza</string>
+    <string name="city_astrahan_text">Astrahan</string>
+    <string name="city_orel_text">Orel</string>
+    <string name="city_kursk_text">Kursk</string>
+    <string name="city_kaliningrad_text">Kaliningrad</string>
+    <string name="city_arhangelsk_text">Arhangelsk</string>
+    <string name="city_murmansk_text">Murmansk</string>
+    <string name="city_adler_text">Adler</string>
+    <string name="city_krasnodar_text">Krasnodar</string>
 </resources>

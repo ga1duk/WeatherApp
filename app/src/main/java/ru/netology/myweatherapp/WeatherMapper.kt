@@ -1,6 +1,7 @@
 package ru.netology.myweatherapp
 
-import ru.netology.myweatherapp.dto.ForecastModel
+import ru.netology.myweatherapp.dto.ForecastModelRemote
+import ru.netology.myweatherapp.model.ForecastModelLocal
 
 const val CLEAR = "clear"
 const val PARTLY_CLOUDY = "partly-cloudy"
@@ -22,9 +23,45 @@ const val THUNDERSTORM = "thunderstorm"
 const val THUNDERSTORM_WITH_RAIN = "thunderstorm-with-rain"
 const val THUNDERSTORM_WITH_HAIL = "thunderstorm-with-hail"
 
+const val MOSCOW = "Москва"
+const val BELGOROD = "Белгород"
+const val UFA = "Уфа"
+const val LIPETSK = "Липецк"
+const val VORONEZH = "Воронеж"
+const val TAMBOV = "Тамбов"
+const val SARATOV = "Саратов"
+const val PENZA = "Пенза"
+const val ASTRAHAN = "Астрахань"
+const val OREL = "Орёл"
+const val KURSK = "Курск"
+const val ARHANGELSK = "Архангельск"
+const val MURMANSK = "Мурманск"
+const val ADLER = "Адлер"
+const val KRASNODAR = "Краснодар"
+
+
 class WeatherMapper {
-    fun mapForecast(input: ForecastModel): ru.netology.myweatherapp.model.ForecastModel {
-        val city = input.geo_object?.locality?.name ?: ""
+    fun mapForecast(input: ForecastModelRemote): ForecastModelLocal {
+        val city = input.geo_object?.locality?.name?.let {
+            when (it) {
+                MOSCOW -> R.string.city_moscow_text
+                BELGOROD -> R.string.city_belgorod_text
+                UFA -> R.string.city_ufa_text
+                LIPETSK -> R.string.city_lipetsk_text
+                VORONEZH -> R.string.city_voronezh_text
+                TAMBOV -> R.string.city_tambov_text
+                SARATOV -> R.string.city_saratov_text
+                PENZA -> R.string.city_penza_text
+                ASTRAHAN -> R.string.city_astrahan_text
+                OREL -> R.string.city_orel_text
+                KURSK -> R.string.city_kursk_text
+                ARHANGELSK -> R.string.city_arhangelsk_text
+                MURMANSK -> R.string.city_murmansk_text
+                ADLER -> R.string.city_adler_text
+                KRASNODAR -> R.string.city_krasnodar_text
+                else -> 0
+            }
+        } ?: 0
         val temp = input.fact?.temp.toString()
         val icon = input.fact?.icon?.let {
             "https://yastatic.net/weather/i/icons/funky/dark/$it.svg"
@@ -53,6 +90,6 @@ class WeatherMapper {
                 else -> 0
             }
         } ?: 0
-        return ru.netology.myweatherapp.model.ForecastModel(city, temp, icon, condition)
+        return ForecastModelLocal(city, temp, icon, condition)
     }
 }

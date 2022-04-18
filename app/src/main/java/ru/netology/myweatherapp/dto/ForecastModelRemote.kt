@@ -1,6 +1,6 @@
 package ru.netology.myweatherapp.dto
 
-data class ForecastModel(
+data class ForecastModelRemote(
     val fact: FactModel?,
     val geo_object: GeoObjectModel?
 )

@@ -12,11 +12,9 @@ import androidx.swiperefreshlayout.widget.CircularProgressDrawable
 import com.bumptech.glide.RequestBuilder
 import ru.netology.myweatherapp.R
 import ru.netology.myweatherapp.databinding.FragmentWeatherBinding
-import ru.netology.myweatherapp.dto.*
 import ru.netology.myweatherapp.glide.GlideApp
 import ru.netology.myweatherapp.ui.CityFragment.Companion.doubleArgLat
 import ru.netology.myweatherapp.ui.CityFragment.Companion.doubleArgLon
-import ru.netology.myweatherapp.ui.CityFragment.Companion.textArg
 import ru.netology.myweatherapp.viewmodel.WeatherViewModel
 
 class WeatherFragment : Fragment() {
@@ -41,7 +39,7 @@ class WeatherFragment : Fragment() {
         }
 
         viewModel.weatherData.observe(viewLifecycleOwner) { weatherModel ->
-            binding.tvCity.text = weatherModel.city
+            binding.tvCity.setText(weatherModel.city)
             requestBuilder?.load(weatherModel.icon)?.into(binding.icCondition)
             GlideApp.with(this)
                 .load(weatherModel.icon)
