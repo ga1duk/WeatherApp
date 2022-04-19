@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="ru.netology.myweatherapp">
+    package="ru.mypackage.myweatherapp">
 
     <uses-permission android:name="android.permission.INTERNET" />
 
@@ -13,7 +13,7 @@
         android:theme="@style/Theme.MyWeatherApp"
         android:usesCleartextTraffic="${usesCleartextTraffic}">
         <activity
-            android:name="ru.netology.myweatherapp.ui.MainActivity"
+            android:name="ru.mypackage.myweatherapp.ui.MainActivity"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />

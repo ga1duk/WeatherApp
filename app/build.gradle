@@ -8,7 +8,7 @@ android {
     compileSdk 31
 
     defaultConfig {
-        applicationId "ru.netology.myweatherapp"
+        applicationId "ru.mypackage.myweatherapp"
         minSdk 21
         targetSdk 31
         versionCode 1
