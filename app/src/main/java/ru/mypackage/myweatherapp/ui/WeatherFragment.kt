@@ -54,8 +54,7 @@ class WeatherFragment : Fragment() {
         }
 
         binding.btnRetry.setOnClickListener {
-            viewModel.loadWeather(arguments?.doubleArgLat!!, arguments?.doubleArgLon!!)
-            println("${arguments?.doubleArgLat!!}, ${arguments?.doubleArgLon!!}")
+            viewModel.loadWeather(arguments?.doubleArgLat ?: 0.0, arguments?.doubleArgLon ?: 0.0)
         }
 
         with(binding.swipeRefreshLayout) {

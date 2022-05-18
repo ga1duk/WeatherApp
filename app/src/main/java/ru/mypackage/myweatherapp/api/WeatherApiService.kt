@@ -33,7 +33,7 @@ private val retrofit = Retrofit.Builder()
 
 interface WeatherApiService {
    @GET("forecast")
-   @Headers("X-Yandex-API-Key: 573dbee2-4c5e-47f4-9abb-e465c1d993bd")
+   @Headers("X-Yandex-API-Key: 40694b7c-e274-45f8-b4bb-69288f561df1")
    suspend fun getWeather(@Query(LAT) lat: Double, @Query (LON) lon: Double): Response<ForecastModelRemote>
 }
 
